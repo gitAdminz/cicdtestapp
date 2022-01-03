@@ -12,4 +12,4 @@ jobs:
         host: 112.196.1.221
         username: ashoktest
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: hello.sh
+        script: sh hello.sh
