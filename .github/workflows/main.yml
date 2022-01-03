@@ -13,5 +13,4 @@ jobs:
         username: ashoktest
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-        cd /home/ashoktest
-        sh hello.sh
+        -run: sh /home/ashoktest/hello.sh
