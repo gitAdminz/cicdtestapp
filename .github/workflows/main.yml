@@ -1,14 +1,15 @@
-name: SSH deployment
+name: remote ssh command
 on: [push]
 jobs:
-  write-to-console:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Hello world!'
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'     
-          
-    
+    - name: testing login demo server
+      uses: appleboy/ssh-action@master
+      with:
+        host: 112.196.1.221
+        username: devsrv
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: whoami
