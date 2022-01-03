@@ -10,6 +10,6 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 112.196.1.221
-        username: devsrv
+        username: ashoktest
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: whoami
